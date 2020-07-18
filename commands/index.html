@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#000000">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#000000">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+
+  <meta name="description" content="Yatu Bot - is just a Discord bot that you need." />
+  <meta name="keywords" content="expo, Yatu Bot, expobot, bot, discord, discord bot, discord.js, discord.js bot, discord.js bot example, jarvis" />
+  <meta name="author" content="jarvis" />
+  <link rel="shortcut icon" href="https://cdn.glitch.com/dc9e80ff-cd40-4f49-9110-bd309a5952db%2F862.png?1531407284127">
+
+  <title>Yatu Bot | Commands</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- import the webpage's stylesheet -->
+  <link rel="stylesheet" href="/commands.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="/materialize.css">
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</head>
+
+<script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+<body>
+
+  <div class="navbar-fixed">
+    <nav class="z-depth-2" role="navigation" style="background: rgba(0, 0, 0, 0.8);">
+      <div class="nav-wrapper container">
+        <a href="/" class="left valign-wrapper hide-on-med-and-down" style="height: 100%;">
+          <img style="height: 80%;" src="https://cdn.glitch.com/dc9e80ff-cd40-4f49-9110-bd309a5952db%2Ftransparent.png?1531409065396">
+        </a>
+        <a href="/" class="right hide-on-large-only valign-wrapper" style="height: 100%;">
+          <img style="height: 80%;" src="https://cdn.glitch.com/dc9e80ff-cd40-4f49-9110-bd309a5952db%2Ftransparent.png?1531409065396">
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="/" class="f waves-effect waves-light white-text">Home YATU</a>
+            <!--<a href="/about" class="f waves-effect waves-light white-text">About</a>-->
+            <a href="/commands" class="f waves-effect waves-light white-text" style="font-weight: 900 !important; box-shadow: 0px -4px 0 -1px #fff inset !important;">Commands</a>
+            <a href="https://discord.gg/ZZ8HuCZ" class="f waves-effect waves-light white-text" target="_blank">Server</a>
+            <a href="https://discordapp.com/api/oauth2/authorize?client_id=464747957288435732&permissions=8&scope=bot" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=464747957288435732&permissions=8&scope=bot', 'newwindow', 'width=500,height=800'); return false;" class="waves-effect waves-light btn-flat white-text center" style="border-style: solid; border-width: 2px; border-radius: 5px; border-color: white;">INVITE ME</a>
+          </li>
+        </ul>
+
+        <a href="" data-target="nav-mobile" class="sidenav-trigger left">
+          <i class="material-icons white-text">menu</i>
+        </a>
+      </div>
+    </nav>
+  </div>
+
+  <ul id="nav-mobile" class="sidenav black-gradient">
+    <li>
+      <a href="/" class="f waves-effect waves-light white-text">Home YATU</a>
+      <!--<a href="/about" class="f waves-effect waves-light white-text">About</a>-->
+      <a href="/commands" class="f waves-effect waves-light white-text" style="font-weight: 900 !important; box-shadow: 4px 0px 0 -1px #fff inset !important;">Commands</a>
+      <a href="https://discord.gg/ZZ8HuCZ" target="_blank" class="f waves-effect waves-light white-text">Community</a>
+      <a href="https://discordapp.com/api/oauth2/authorize?client_id=464747957288435732&permissions=8&scope=bot" onclick="window.open('https://discordapp.com/api/oauth2/authorize?client_id=464747957288435732&permissions=8&scope=bot', 'newwindow', 'width=500,height=800'); return false;" class="waves-effect waves-light btn-flat white-text center" style="border-style: solid; border-width: 2px; border-radius: 5px; border-color: white;">INVITE</a>
+    </li>
+  </ul>
+
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col l2 hide-on-med-and-down tabs-v" style="height: calc(100vh - 84px);">
+        
+        <div class="tabs-v">
+          <button class="tablinks" onclick="openCity(event, 'p1')">Public</button>
+          <button class="tablinks" onclick="openCity(event, 'p2')">Moderation</button>
+          <button class="tablinks" onclick="openCity(event, 'p3')">Role</button>
+          <button class="tablinks" onclick="openCity(event, 'p4')">Util</button>
+          <button class="tablinks" onclick="openCity(event, 'p5')">Music</button>
+          <button class="tablinks" onclick="openCity(event, 'p6')">Fun</button>
+          <button class="tablinks" onclick="openCity(event, 'p7')">Economy</button>
+          
+        </div>
+        
+      </div>
+
+      <div class="col s12 m12 hide-on-large-only">
+        <ul class="tabs transparent">
+          <li class="tab"><a href="#p1" class="white-text">Public</a></li>
+          <li class="tab"><a href="#p2" class="white-text">Moderation</a></li>
+          <li class="tab"><a href="#p3" class="white-text">Role</a></li>
+          <li class="tab"><a href="#p4" class="white-text">Util</a></li>
+          <li class="tab"><a href="#p5" class="white-text">Music</a></li>
+          <li class="tab"><a href="#p6" class="white-text">Fun</a></li>
+          <li class="tab"><a href="#p7" class="white-text">Economy</a></li>
+          <li class="tab"><a href="#p8" class="white-text">Search</a></li>
+        </ul>
+      </div>
+
+      <!-- Public -->
+      <div id="p1" class="tabcontent active">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-help</span></div>
+              <span class="white-text"> عشان يورجيك هاذي الصفحة
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>منشن البوت</span></div>
+              <span class="white-text">يوريك معلو مات البوت.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-report</span></div>
+              <span class="white-text">لكي تبلغ على احد
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-rules</span></div>
+              <span class="white-text">قوانين السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+          <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-emojilist</span></div>
+              <span class="white-text">لعرض ايموجيات السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-perms <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لعرض امكانيات تعضيلك في السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-contact<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">للتواصل مع صاحب البوت
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-bug <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">للبلاغ على خطء في البوت
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-avatar <span class="red-text text-lighten-2">@mention</span></span></div>
+              <span class="white-text">لعرض صورتك في السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-image <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لعرض صورة السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-server <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">معلومات عن السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-user <span class="red-text text-lighten-2">@mention</span></span></div>
+              <span class="white-text">معلومات عنك
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-allbots <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لمعرفة كم بوت في سيرفرك
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-count <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لمعرفة عدد الاشخاص في سيرفرك
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-credit <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لرؤية الكريدت الخاص بك
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-daily <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لاخذ حصتك اليومية من الكريدت
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-credits <span class="red-text text-lighten-2">@user</span></span></div>
+              <span class="white-text">لتحويل الكريدت الي شخص اخر
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Moderation -->
+      <div id="p2" class="tabcontent">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-ban</span></div>
+              <span class="white-text"><b>B A N</b> someone.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-bans <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لكي تضع احد في البلاك لست
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-kick</span></div>
+              <span class="white-text"><b>K I C K</b> someone.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-unban ID</span></div>
+              <span class="white-text">لفك الباند من شخص.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-mute</span></div>
+              <span class="white-text">لاعطاء احد ميوت.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-unmute</span></div>
+              <span class="white-text">لفك الميوت عن شخص.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-clear <span class="red-text text-lighten-2">(num)</span></span></div>
+              <span class="white-text">لمسح عدد معين من الشات
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-warn <span class="red-text text-lighten-2">(reason)</span></span></div>
+              <span class="white-text">لكي تحذر شخص.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-blacklist <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لكي ترا البلاكليست
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-blacklist add <span class="red-text text-lighten-2">*member*</span></span></div>
+              <span class="white-text">لكي تضع احد في البلاك لست
+              </span>
+            </div>
+          </div>
+        </div>
+        
+          <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-blacklist remove <span class="red-text text-lighten-2">*member*</span></span></div>
+              <span class="white-text">لكي تضع احد في البلاك لست
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-sr <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لكي تتغير اسم السيرفر
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-schannel <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لاظهار الشات
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-hchannel <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لاخفاء الشات
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-v2min <span class="red-text text-lighten-2">*اسم الروم*</span></span></div>
+              <span class="white-text">عمل روم صوتي موقت
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-setnick <span class="red-text text-lighten-2">*member*</span></span></div>
+              <span class="white-text">لتغيير نيك نيم عضو
+              </span>
+            </div>
+          </div>
+        </div>
+        
+         <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-moveall <span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">لسحب جميع الاعضاء الي رومك الصوتي
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-infoinv <span class="red-text text-lighten-2">*رمز الدعوة*</span></span></div>
+              <span class="white-text">لسحب جميع الاعضاء الي رومك الصوتي
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Role -->
+      <div id="p3" class="tabcontent">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-role <span class="red-text text-lighten-2">*user* *rolename*</span></span></div>
+              <span class="white-text">Say hello when member joins.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-role all rolename<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-role humans rolename<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+      
+      <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-role bots rolename<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-roleremove <span class="red-text text-lighten-2"></span>*user* *role name*</span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-roleremove all rolename<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-roleremove humans rolename<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>-roleremove bots rolename<span class="red-text text-lighten-2"></span></span></div>
+              <span class="white-text">
+              </span>
+            </div>
+          </div>
+        </div>
+        
+    
+
+        <!--<div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#stream <span class="red-text text-lighten-2">(role) (pos)</span></span></div>
+              <span class="white-text">Automaticly sets a 'streamer' role to the member, who is streaming.
+              </span>
+            </div>
+          </div>
+        </div>-->
+
+      </div>
+
+      <!-- Util -->
+      <div id="p4" class="tabcontent">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text">#settings <span class="red-text text-lighten-2">(parameter) (value)</span></div>
+              <span class="white-text">Shows your server's settings. To change them, write after (parameter) and (value).
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#urban <span class="red-text text-lighten-2">(text)</span></span></div>
+              <span class="white-text">Searches something in urban disctionary.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#randomurban</span></div>
+              <span class="white-text">Searches something random in urban disctionary.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#botnick</span></div>
+              <span class="white-text">Allows you to change bot's nickname
+              </span>
+            </div>
+          </div>
+        </div>-->
+
+      </div>
+
+      <!-- Music -->
+      <div id="p5" class="tabcontent">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#queue</span></div>
+              <span class="white-text">Shows you a server's queue.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#clear <span class="grey-text">(or #cq)</span></span></div>
+              <span class="white-text">Clearings server's queue.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#play</span></div>
+              <span class="white-text">Adds the first result (on YT) to the server's queue.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#skip</span></div>
+              <span class="white-text">Vote for skip current song.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#forceskip</span></div>
+              <span class="white-text">Skips current song.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#volume <span class="red-text text-lighten-2">(0-200)</span></span></div>
+              <span class="white-text">Sets volume.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#pause</span></div>
+              <span class="white-text">Pause, lol.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#resume</span></div>
+              <span class="white-text">Same :)
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#join</span></div>
+              <span class="white-text">Bot joins to the voice channel...
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#leave</span></div>
+              <span class="white-text">...or leaves.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <!--<div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#remove</span></div>
+              <span class="white-text">Removes song from the serves's queue.
+              </span>
+            </div>
+          </div>
+        </div>-->
+
+      </div>
+
+      <!-- Fun -->
+      <div id="p6" class="tabcontent">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#ping</span></div>
+              <span class="white-text">Pong!
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#kiss</span></div>
+              <span class="white-text">Kiss! :* someone.
+              </span>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#pat</span></div>
+              <span class="white-text">Pat someone.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#hug</span></div>
+              <span class="white-text">Hug someone.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#neko</span></div>
+              <span class="white-text">Catch neko.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#lewd</span></div>
+              <span class="white-text">Catch lewd neko! Only in NSFW.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#dice</span></div>
+              <span class="white-text">Rolls the dice.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#8ball</span></div>
+              <span class="white-text">Asks 8ball for an answer.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#say</span></div>
+              <span class="white-text">Bot says what you said.
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    <!-- Economy -->
+      <div id="p7" class="tabcontent">
+
+        <!--<div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#balance</span></div>
+              <span class="white-text">Checks your balance.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#daily</span></div>
+              <span class="white-text">Gives your daily reward.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#roulette</span></div>
+              <span class="white-text">Play Russian Roulette.
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#send</span></div>
+              <span class="white-text">Send some money to other member.
+              </span>
+            </div>
+          </div>
+        </div>-->
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#messages</span></div>
+              <span class="white-text">Shows amount of your messages.
+              </span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#leaderboards</span></div>
+              <span class="white-text">Shows server's leaderboards.
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Search -->
+      <div id="p8" class="tabcontent">
+
+        <div class="col s12 m12 l5">
+          <div class="card grey darken-4 z-depth-3">
+            <div class="card-content white-text">
+              <div class="card-title red-text"><span>#google</span></div>
+              <span class="white-text">Search something on Google.
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+  <!-- import the webpage's javascript file -->
+  <script src="/script.js" defer></script>
+
+</body>
+
+</html>
